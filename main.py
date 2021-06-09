@@ -1,3 +1,6 @@
+import obliczenia
+import random
+
 menu = {'własna':[15,20],'margarita':[20,30],'hawaii':[23,35],'salami':[22,34],'carbonara':[21,32]}
 skladniki = {'szynka':4,'ser':3,'salami':4,'bekon':3,'kurczak':5,'pieczarki':2,'ananas':3,'cebula':2}
 sosy = ['bez sosu','czosnkowy','pomidorowy','miodowo-musztardowy','majonezowy']
