@@ -101,18 +101,16 @@ while choiceMenu != 0:
                     cena += list(skladniki.values())[int(choiceSkladnik)-1
                     ]
                     print("Wybrane składniki: ",wybraneSkladniki)
-            else:
-                szczegolyZamowienia()
         else:
             print("Jaki rozmiar pizzy? Podaj 'mala' lub 'duza'")
             choiceRozmiar = input("Wybieram: ")
             if choiceRozmiar == 'mala':
-                zamowienie.append(list(menu.keys())[int(choicePizza)])
-                cena += list(menu.values())[int(choicePizza)][0]
-                wyborSosu()
+                zamowienie.append(list(menu.keys())[int(choicePizza)-1])
+                cena += list(menu.values())[int(choicePizza)-1][0]
             elif choiceRozmiar == 'duza':
-                zamowienie.append(list(menu.keys())[int(choicePizza)])
-                cena += list(menu.values())[int(choicePizza)][1]
+                zamowienie.append(list(menu.keys())[int(choicePizza)-1])
+                cena += list(menu.values())[int(choicePizza)-1][1]
+            wyborSosu()
         szczegolyZamowienia()
 
     #pokaz menu
