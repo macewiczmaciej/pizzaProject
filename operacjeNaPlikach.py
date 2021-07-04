@@ -2,7 +2,7 @@
 import datetime
 
 def addToOrders(zamowienie):
-    with open("zamowienia1.txt", "w") as file:
+    with open("zamowienia.txt", "a") as file:
         datenow = datetime.datetime.now()
         file.write(datenow.strftime("%Y-%m-%d %H:%M"+":"))
         file.write("\n")
@@ -11,6 +11,6 @@ def addToOrders(zamowienie):
 
 
 def printFromOrders():
-    with open("zamowienia1.txt", "a") as file:
+    with open("zamowienia.txt", "r") as file:
         for i in file.readlines():
             print(i)

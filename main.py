@@ -1,4 +1,5 @@
 import operacjeNaPlikach
+import os
 
 menu = {'własna': [15, 20], 'margarita': [20, 30], 'hawaii': [23, 35], 'salami': [22, 34], 'carbonara': [21, 32]}
 skladniki = {'szynka': 4, 'ser': 3, 'salami': 4, 'bekon': 3, 'kurczak': 5, 'pieczarki': 2, 'ananas': 3, 'cebula': 2}
@@ -87,6 +88,7 @@ while choiceMenu != 0:
     0. Zakończ
     """)
     choiceMenu = int(input("Wybieram: "))
+    print()
 
     # wyjdz z menu
     if (choiceMenu == 0):
@@ -115,7 +117,6 @@ while choiceMenu != 0:
             continue
         elif choiceZamowienie == 1:
             operacjeNaPlikach.addToOrders(zamowienie)
-
             print(dash)
             print("SUKCES! Zamówiono wybrane pizze :)")
             print(dash)
@@ -137,4 +138,7 @@ while choiceMenu != 0:
         print(dash)
 
     if (choiceMenu == 5):
-        operacjeNaPlikach.printFromOrders()
+        if(os.stat("zamowienia.txt").st_size==0):
+            print("Brak zamówień")
+        else:
+            operacjeNaPlikach.printFromOrders()
